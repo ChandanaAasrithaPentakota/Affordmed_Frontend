@@ -1,33 +1,84 @@
-# React URL Shortener Web App
+# 🔗 React URL Shortener
 
-## 📌 Introduction
-This is a **React-based URL Shortener** application built with **Material UI** and **React Router**.  
-It allows users to:
-- Shorten long URLs with optional expiry time and custom shortcodes.
-- Redirect using shortened URLs.
-- View statistics such as total clicks, timestamp, source, and location.
-
-The app runs fully client-side using **LocalStorage** for persistence.
+## 📖 About
+This is a simple **URL Shortener web app** built with **React** and **Material UI**.  
+It allows you to shorten URLs, create custom shortcodes, set expiry times, and track link usage.  
+All data is stored in **LocalStorage** (no backend required).
 
 ---
 
-## 🚀 Features
-- Shorten URLs with optional custom shortcode.
-- Set expiry time for each shortened link.
-- Redirect from `http://localhost:3000/:shortcode` to original URL.
-- Track click statistics (timestamp, source, location).
-- Display all created links and their analytics in a Stats page.
-- Error handling for invalid input, duplicate shortcodes, and expired links.
-- Built using **React + Material UI only** (per requirement).
+## ✨ Features
+- Shorten long URLs
+- Optional custom shortcode
+- Optional expiry time (default 30 minutes)
+- Redirect using `http://localhost:3000/:shortcode`
+- Statistics page with:
+  - Total clicks
+  - Click timestamps
+  - Source (referrer)
+  - Location (mocked)
 
 ---
 
-## 🏗️ Tech Stack
-- **React** (Frontend framework)
-- **Material UI (MUI)** (UI components)
-- **React Router DOM** (Routing)
-- **LocalStorage** (Persistence)
+## 🛠️ Tech Used
+- **React** (frontend framework)  
+- **Material UI** (UI components & styling)  
+- **React Router DOM** (routing & redirects)  
+- **LocalStorage** (data persistence)
+
+---
+
+## 🚀 How to Run
+1. Clone this repository:
+   ```bash
+   git clone <repo-url>
+   cd <project-folder>
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   npm install @mui/material @mui/icons-material @emotion/react @emotion/styled react-router-dom
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+4. Open in your browser:  
+   👉 [http://localhost:3000](http://localhost:3000)
 
 ---
 
 ## 📂 Project Structure
+```
+src/
+ ├── App.js              # Main app with routes
+ ├── index.js            # Entry point
+ ├── utils/
+ │    └── storage.js     # LocalStorage helper functions
+ └── pages/
+      ├── ShortenerPage.js   # Form to shorten URLs
+      ├── RedirectPage.js    # Handles redirects
+      └── StatsPage.js       # Shows analytics
+```
+
+---
+
+## 📌 Notes
+- This app works **only on localhost**.
+- Location in stats is mocked (`"Unknown"`).
+- Clearing browser storage will reset all data.
+
+---
+
+## 🎯 Future Enhancements
+- Real backend for permanent storage
+- GeoIP-based real location tracking
+- QR code generation for links
+- Authentication for user-specific data
+
+---
+
+✍️ Developed for a coding evaluation.
